@@ -21,9 +21,11 @@
 - Используется `TripletLoss`
 
 `Triplet Loss`
+
 $$
-L = \max \left( d(a, p) - d(a, n) + \text{margin},\ 0 \right)
+L = \max \left(d(a, p) - d(a, n) + \text{margin}, 0 \right)
 $$
+
 Где:
 - $a$ — anchor (якорный пример)
 - $p$ — positive (положительный, похожий пример)
