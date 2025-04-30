@@ -45,17 +45,21 @@ $$
 - Обучение с `CosineSimilarityLoss` или `ContrastiveLoss`
 
 `CosineSimilarityLoss`
+
 $$
 L = 1 - \cos(\theta) = 1 - \frac{ x_1 \cdot x_2 }{ |x_1| \cdot |x_2| }
 $$
+
 Где:
 - $x_1, x_2$ — эмбеддинги двух объектов
 - $\cos(\theta)$ — косинусное сходство между векторами $x_1$ и $x_2$
 
 `Contrastive Loss`
+
 $$
 L = (1 - y) \cdot \frac{1}{2} D^2 + y \cdot \frac{1}{2} [ \max(0, m - D) ]^2
 $$
+
 Где:
 - $y \in {0, 1}$ — метка (0 — разные, 1 — похожие)
 - $D = | x_1 - x_2 |$ — расстояние между эмбеддингами
@@ -77,9 +81,11 @@ $$
 - Можно использовать в `TripletLoss` или `MultipleNegativesRankingLoss`
 
 `MultipleNegativesRankingLoss`
+
 $$
 L = -\frac{1}{N} \sum_{i=1}^{N} \log \frac{ \exp(\text{sim}(a_i, p_i)) }{ \sum_{j=1}^{N} \exp(\text{sim}(a_i, p_j)) }
 $$
+
 Где:
 - $N$ — размер батча
 - $a_i$ — anchor (якорный пример) в батче
